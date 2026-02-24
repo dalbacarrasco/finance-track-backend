@@ -18,6 +18,7 @@ namespace FinTrackAPI.Data
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<ITransactionService, TransactionService>();
+            services.AddScoped<IDashboardService, DashboardService>();
 
             return services;
         }

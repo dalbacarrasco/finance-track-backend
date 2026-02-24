@@ -6,6 +6,7 @@ using FinTrackAPI.Data;
 using FinTrackAPI.Repositories;
 using FinTrackAPI.Services;
 using FinTrackAPI.Services.Interfaces;
+using FinTrackAPI.Repositories.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,9 +33,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 // Repositorios
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
 // Servicios
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
